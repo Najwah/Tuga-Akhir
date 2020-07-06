@@ -18,7 +18,8 @@ class InventarisController extends Controller
      */
     public function index()
     {
-        //
+        $inventaris=Inventaris::all();
+        return view('inventaris.index',['inventaris'=>$inventaris]);
     }
 
     /**
@@ -68,7 +69,20 @@ class InventarisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $inventaris=Inventaris::create($request->except(['barang','sumber_dana','dosen','lab']));
+        $barang=Barang::find($request->barang);
+        $sumberDana=SumberDana::find($request->sumber_dana);
+        $inventaris->barang()->associate($barang);
+        $inventaris->sumberDana()->associate($sumberDana);
+        if ($request->has('dosen')) {
+            $dosen=Dosen::find($request->dosen);
+            $inventaris->peruntukan()->associate($dosen);
+        } else {
+            $lab=Lab::find($request->lab);
+            $inventaris->peruntukan()->associate($lab);
+        }
+        $inventaris->save();
+        return redirect()->route('inventaris.index');
     }
 
     /**

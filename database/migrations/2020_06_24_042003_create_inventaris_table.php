@@ -15,15 +15,15 @@ class CreateInventarisTable extends Migration
     {
         Schema::create('inventaris', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('barang_id');
-            $table->string('nomor_inventaris');
+            $table->foreignId('barang_id')->nullable();
+            $table->string('nomor_inventaris')->nullable();
             $table->year('tahun_perolehan');
-            $table->foreignId('sumber_dana_id');
+            $table->foreignId('sumber_dana_id')->nullable();
             $table->string('kondisi');
             $table->string('tempat');
             $table->boolean('habis_pakai');
-            $table->foreignId('peruntukan_id');
-            $table->string('peruntukan_type');
+            $table->foreignId('peruntukan_id')->nullable();
+            $table->string('peruntukan_type')->nullable();
             $table->timestamps();
         });
     }

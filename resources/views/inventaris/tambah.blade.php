@@ -107,6 +107,23 @@
         </div>
       </div>
       <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Jenis Barang</label>
+        <div class="col-sm-10">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="habis_pakai" id="exampleRadios1" value="1" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                  Habis Pakai
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="habis_pakai" id="exampleRadios1" value="0" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                 Modal
+                </label>
+              </div>
+        </div>
+      </div>
+      <div class="form-group row">
         <label class="col-sm-2 col-form-label">Peruntukan</label>
         <div class="col-sm-10">
             <div class="form-check">

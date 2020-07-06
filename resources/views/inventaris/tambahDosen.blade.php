@@ -76,7 +76,7 @@
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Tahun Perolehan</label>
         <div class="col-sm-10">
-        <input type="number" min="1900" max="2099" name="tahun_perolehan" disabled value="{{$data["tahun_perolehan"]}}"/>
+        <input type="number" min="1900" max="2099" name="tahun_perolehan" value="{{$data["tahun_perolehan"]}}"/>
         </div>
       </div>
       <div class="form-group row">
@@ -126,6 +126,31 @@
                 @endif
                 <label class="form-check-label" for="exampleRadios1">
                   Rusak Berat (BB)
+                </label>
+              </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Jenis Barang</label>
+        <div class="col-sm-10">
+            <div class="form-check">
+                @if ($data["habis_pakai"] == "1")
+                    <input class="form-check-input" type="radio" name="habis_pakai" id="exampleRadios1" value="1" checked>
+                @else
+                    <input class="form-check-input" type="radio" name="habis_pakai" id="exampleRadios1" value="1" >
+                @endif
+                <label class="form-check-label" for="exampleRadios1">
+                  Habis Pakai
+                </label>
+              </div>
+              <div class="form-check">
+                @if ($data["habis_pakai"] == "0")
+                    <input class="form-check-input" type="radio" name="habis_pakai" id="exampleRadios1" value="0" checked>
+                @else
+                    <input class="form-check-input" type="radio" name="habis_pakai" id="exampleRadios1" value="0" >
+                @endif
+                <label class="form-check-label" for="exampleRadios1">
+                 Modal
                 </label>
               </div>
         </div>
